@@ -13,14 +13,21 @@ def button_clear():
   textw.delete(0,'end')
 
 def button_add():
-  return
+  global number1
+  number1 = textw.get()
+  textw.delete(0,'end')
+  
 
 def button_equal():
-  return
-
+  number2=textw.get()
+  sumnumb=int(number1) + int(number2)
+  textw.delete(0,'end')
+  textw.insert(0,sumnumb)
 
 textw=tk.Entry()
 textw.grid(row=0,column=0, columnspan=3)
+
+
 
 
 button1 = tk.Button(text="1",padx=30,pady=10,command=lambda :button_click(1))
@@ -36,6 +43,8 @@ button8 = tk.Button(text="8",padx=30,pady=10,command=lambda : button_click(8))
 button9 = tk.Button(text="9",padx=30,pady=10,command=lambda : button_click(9))
 
 button0 = tk.Button(text="0",padx=30,pady=10,command=lambda : button_click(0))
+
+
 button_clear=tk.Button(text="Clear",padx=60,pady=10,command=button_clear)
 
 button_add=tk.Button(text="+",padx=30,pady=10,command=button_add)
@@ -74,7 +83,8 @@ button.pack()
 '''
 
 
-
+#for i in range 10:
+ 
 
 
 tk.mainloop()
